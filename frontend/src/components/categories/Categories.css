@@ -1,0 +1,46 @@
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.categories-section {
+    margin: 0 auto;
+    margin-top: 20px;
+    width: 95%;
+}
+h1 {
+    text-align: center;
+}
+a {
+    text-decoration: none;
+}
+.categories {
+    display: flex;
+    justify-content: space-between;
+    flex-flow: row wrap;
+}
+.card {
+    min-width: 200px;
+    margin-top: 40px;
+    border-radius: 20px;
+    background-color: rgb(127, 161, 122);
+    width: 20%;
+    box-shadow: 3px 10px 10px black;
+    transition: transform 0.5s;
+}
+.card img {
+    z-index: 0;
+    opacity: 1;
+    border-radius: 20px 20px 0 0;
+}
+.card p {
+    font-family: cursive;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-align: center;
+    color: navy;
+}
+.card:hover {
+    transform: translateY(-30px);
+}
