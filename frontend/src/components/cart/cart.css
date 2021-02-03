@@ -1,0 +1,13 @@
+.cartdiv {
+    margin: 30px;
+}
+.cartitem {
+    display: flex;
+    flex-direction: row;
+}
+.cartimg {
+    width: 10%;
+}
+.cartdetail {
+    margin-left: 30px;
+}

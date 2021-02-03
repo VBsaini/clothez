@@ -1,0 +1,42 @@
+.detailContainer {
+    width: 95%;
+    margin: 0 auto;
+    margin-top: 40px;
+}
+.detailCard {
+    margin-top: 40px;
+    min-width: 150px;
+    width: 90%;
+    display: flex;
+}
+.bigImage {
+    width: 300px;
+    margin-left: 20px;
+}
+.details {
+    display: flex;
+    flex-direction: column;
+}
+.details p {
+    margin-top: 0;
+}
+.mb0 {
+    margin-bottom: 0;
+}
+.detailWrapper {
+    margin-left: 40px;
+}
+.detailItem {
+    margin-bottom: 30px;
+}
+.littleImages {
+    width: 50px;
+    margin-bottom: 30px;
+}
+.images {
+    display: flex;
+}
+.littleImageswrapper {
+    display: flex;
+    flex-direction: column;
+}

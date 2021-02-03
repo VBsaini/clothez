@@ -1,7 +1,7 @@
 import react from "react";
 import "./navbar.css";
 
-function Navbar() {
+function Navbar(props) {
     return (
         <nav>
             <div className="logo">
@@ -28,13 +28,30 @@ function Navbar() {
             <div className="links-div">
                 <ul className="links">
                     <li className="link">
-                        <a href="#">Home</a>
+                        <a
+                            href="#"
+                            onClick={() => {
+                                props.storeCallback(false);
+                            }}
+                        >
+                            Home
+                        </a>
                     </li>
                     <li className="link">
                         <a href="#">Login</a>
                     </li>
                     <li className="link">
                         <a href="#">Sign up</a>
+                    </li>
+                    <li className="link">
+                        <a
+                            href="#"
+                            onClick={() => {
+                                props.cartCallback(true);
+                            }}
+                        >
+                            <i class="fas fa-shopping-cart"></i>
+                        </a>
                     </li>
                 </ul>
             </div>

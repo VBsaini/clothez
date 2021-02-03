@@ -1,12 +1,15 @@
 import { react } from "react";
 import "./Categories.css";
 
-function categories() {
+function categories(Props) {
     return (
         <div className="categories-section">
             <div className="categories">
                 <div className="card">
-                    <a href="#">
+                    <a
+                        href="#"
+                        onClick={() => Props.Storecallback(true, "men")}
+                    >
                         <div>
                             <img
                                 src="https://images.unsplash.com/photo-1516290260555-781710098c93?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80"
@@ -17,7 +20,10 @@ function categories() {
                     </a>
                 </div>
                 <div className="card">
-                    <a href="#">
+                    <a
+                        href="#"
+                        onClick={() => Props.Storecallback(true, "women")}
+                    >
                         <div>
                             <img
                                 src="https://images.unsplash.com/photo-1516290260555-781710098c93?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80"
@@ -28,7 +34,10 @@ function categories() {
                     </a>
                 </div>
                 <div className="card">
-                    <a href="#">
+                    <a
+                        href="#"
+                        onClick={() => Props.Storecallback(true, "kids")}
+                    >
                         <div>
                             <img
                                 src="https://images.unsplash.com/photo-1516290260555-781710098c93?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80"
@@ -39,7 +48,10 @@ function categories() {
                     </a>
                 </div>
                 <div className="card">
-                    <a href="#">
+                    <a
+                        href="#"
+                        onClick={() => Props.Storecallback(true, "unisex")}
+                    >
                         <div>
                             <img
                                 src="https://images.unsplash.com/photo-1516290260555-781710098c93?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80"
