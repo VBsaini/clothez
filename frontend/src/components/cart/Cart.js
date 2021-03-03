@@ -7,7 +7,13 @@ function Cart(Props) {
             <div className="cart">
                 {Props.items.map((item, index) => {
                     return (
-                        <div key={index} className="cartitem">
+                        <div
+                            key={index}
+                            className="cartitem"
+                            onClick={() => {
+                                Props.detailCallback(true, item);
+                            }}
+                        >
                             <img src={item.images[0]} className="cartimg" />
                             <div className="cartdetail">
                                 <p className="cartnameandprice">

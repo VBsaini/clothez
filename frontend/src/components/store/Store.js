@@ -8,6 +8,8 @@ function Store(Props) {
             <Details
                 item={Props.detailitem}
                 cartAddItems={Props.cartAddItems}
+                cartItems={Props.cartItems}
+                cartRemoveItems={Props.cartRemoveItems}
             ></Details>
         );
     } else {

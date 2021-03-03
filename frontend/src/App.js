@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar/Navbar";
 import Categories from "./components/categories/Categories";
 import Store from "./components/store/Store";
 import Cart from "./components/cart/Cart";
+import Sidebar from "./components/Sidebar/Sidebar";
 
 class App extends react.Component {
     constructor(props) {
@@ -23,10 +24,9 @@ class App extends react.Component {
             .then((data) => data.json())
             .then((data) => {
                 this.setState({ data: data });
-                console.log(this.state.data);
             });
     }
-    cart = (data, items) => {
+    cart = (data) => {
         this.setState({
             cart: data,
         });
@@ -37,6 +37,17 @@ class App extends react.Component {
                 cartitems: [...prevstate.cartitems, item],
             };
         });
+        this.cart(true);
+    };
+    cartRemoveItems = (item) => {
+        this.setState((prevstate) => {
+            return {
+                cartitems: prevstate.cartitems.filter(
+                    (items) => !(items === item)
+                ),
+            };
+        });
+        this.cart(true);
     };
     storeCallback = (data, filter = "") => {
         this.setState({
@@ -46,8 +57,6 @@ class App extends react.Component {
             detailitem: [],
             cart: false,
         });
-
-        console.log(this.state);
     };
     detailscallback = (dtrue, data) => {
         this.setState({ details: dtrue, detailitem: data, cart: false });
@@ -55,7 +64,12 @@ class App extends react.Component {
     render() {
         let componenet;
         if (this.state.cart) {
-            componenet = <Cart items={this.state.cartitems}></Cart>;
+            componenet = (
+                <Cart
+                    items={this.state.cartitems}
+                    detailCallback={this.detailscallback}
+                ></Cart>
+            );
         } else if (this.state.data[0] && !this.state.Store) {
             componenet = (
                 <Categories
@@ -72,6 +86,8 @@ class App extends react.Component {
                     Data={this.state.data}
                     filter={this.state.Gfilter}
                     cartAddItems={this.cartAddItems}
+                    cartRemoveItems={this.cartRemoveItems}
+                    cartItems={this.state.cartitems}
                 ></Store>
             );
         } else {
@@ -84,6 +100,7 @@ class App extends react.Component {
                     storeCallback={this.storeCallback}
                     cartCallback={this.cart}
                 ></Navbar>
+                {/* <Sidebar></Sidebar> */}
                 {componenet}
                 <button
                     onClick={() => {

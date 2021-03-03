@@ -6,8 +6,12 @@ class Details extends react.Component {
         this.state = {
             item: this.props.item,
             num: 0,
+            cartItems: this.props.cartItems,
             cartadditems: () => {
                 this.props.cartAddItems(this.state.item);
+            },
+            cartremoveitems: () => {
+                this.props.cartRemoveItems(this.state.item);
             },
         };
         this.imageSlider = this.imageSlider.bind(this);
@@ -18,8 +22,28 @@ class Details extends react.Component {
         });
     };
     render() {
-        console.log(this.state.item);
-
+        let cartButton = (
+            <button
+                onClick={() => {
+                    this.state.cartadditems();
+                }}
+            >
+                Add to cart
+            </button>
+        );
+        for (let item of this.state.cartItems) {
+            if (item == this.state.item) {
+                cartButton = (
+                    <button
+                        onClick={() => {
+                            this.state.cartremoveitems();
+                        }}
+                    >
+                        Remove from cart
+                    </button>
+                );
+            }
+        }
         return (
             <div className="detailContainer">
                 <div className="detailCard">
@@ -52,13 +76,7 @@ class Details extends react.Component {
                         </div>
                         <div className="buy detailItem">
                             <button>Buy</button>
-                            <button
-                                onClick={() => {
-                                    this.state.cartadditems();
-                                }}
-                            >
-                                Add to cart
-                            </button>
+                            {cartButton}
                         </div>
                     </div>
                 </div>

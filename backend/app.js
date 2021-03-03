@@ -14,6 +14,7 @@ const clothesSchema = new mongoose.Schema({
     name: String,
     type: String,
     price: Number,
+    category: String,
     images: Array,
     description: String,
 });
